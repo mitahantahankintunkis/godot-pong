@@ -1,5 +1,6 @@
 extends "res://Paddle.gd"
 
+# Moves the paddle based on user input
 func _physics_process(_delta):
 	var dir = Vector2(
 		0,

@@ -10,6 +10,7 @@ func _ready():
 	reset()
 
 
+# Resets the ball's position, speed, and direction
 func reset():
 	speed = start_speed
 	
@@ -22,18 +23,20 @@ func reset():
 func _physics_process(delta):
 	vel = vel.normalized() * speed
 	
+	# Reflects off of collided surfaces
 	var collision = move_and_collide(vel * delta)
 	if collision:
 		vel = vel.bounce(collision.normal)
 		vel += collision.collider_velocity
 		vel = vel.normalized()
 		
-		# Limiting velocity along the Y-axis to reduce waiting
+		# Limits velocity along the Y-axis to reduce waiting
 		vel.y = clamp(vel.y, -0.8, 0.8)
 		vel = vel.normalized()
 
+		# Increases the ball speed if it hit a paddle
 		if collision.collider is KinematicBody2D:
 			speed += 25
 
-		# Limiting speed in case the ball gets stuck between a wall and the paddle
+		# Limits speed in case the ball gets stuck between a wall and the paddle
 		if speed > 1000: speed = 1000

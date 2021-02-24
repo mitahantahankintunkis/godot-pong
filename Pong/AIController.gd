@@ -10,7 +10,8 @@ const play_area = Vector2(560, 464 - 16)
 const play_area_offset = Vector2(0, 16)
 
 
-# Naive AI
+# Naive AI which tries to keep the paddle's y-axis position the same
+# as the ball's
 func _naive():
 	var dir_y
 	
@@ -26,7 +27,7 @@ func _naive():
 	move(parent, dir)
 
 
-# Smart AI
+# Smart AI which calculates where the paddle must be moved to intersect the ball
 func _smart():
 	var dir_y
 	
