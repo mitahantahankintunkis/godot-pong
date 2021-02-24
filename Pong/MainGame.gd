@@ -6,24 +6,10 @@ signal p2_score_update(score)
 
 var p1_score = 0
 var p2_score = 0
-var min_fps = 999
 
 
 func _ready():
-	#yield(get_tree().create_timer(1), "timeout")
 	respawn()
-	fps_counter()
-
-func fps_counter():
-	while true:
-		yield(get_tree().create_timer(1), "timeout")
-		print(min_fps)
-		min_fps = 999
-
-
-func _physics_process(_delta):
-	var fps = Engine.get_frames_per_second()
-	if min_fps > fps: min_fps = fps
 
 
 func respawn():
