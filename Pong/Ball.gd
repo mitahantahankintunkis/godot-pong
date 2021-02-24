@@ -26,9 +26,14 @@ func _physics_process(delta):
 	if collision:
 		vel = vel.bounce(collision.normal)
 		vel += collision.collider_velocity
+		vel = vel.normalized()
 		
+		# Limiting velocity along the Y-axis to reduce waiting
+		vel.y = clamp(vel.y, -0.8, 0.8)
+		vel = vel.normalized()
+
 		if collision.collider is KinematicBody2D:
 			speed += 25
-		
+
 		# Limiting speed in case the ball gets stuck between a wall and the paddle
 		if speed > 1000: speed = 1000

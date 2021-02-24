@@ -231,6 +231,7 @@ visible = false
 layer = 100
 
 [node name="MainMenu" parent="MainMenu" instance=ExtResource( 9 )]
+visible = false
 
 [node name="ScreenShader" type="CanvasLayer" parent="."]
 layer = 128

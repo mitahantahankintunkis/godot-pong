@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	get_tree().paused = true
+	visible = true
 
 
 func _on_Button_pressed():
