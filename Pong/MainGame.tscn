@@ -1,0 +1,253 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://interface/UI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interface/Pause.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MainGame.gd" type="Script" id=3]
+[ext_resource path="res://interface/materials/crt.material" type="Material" id=4]
+[ext_resource path="res://ScreenShader.gd" type="Script" id=5]
+[ext_resource path="res://AIController.gd" type="Script" id=6]
+[ext_resource path="res://PlayerController.gd" type="Script" id=7]
+[ext_resource path="res://Ball.gd" type="Script" id=8]
+[ext_resource path="res://interface/MainMenu.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 48 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 48 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 328, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 40, 288 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8, 8 )
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 472.0 ],
+"_edit_vertical_guides_": [ 568.0 ]
+}
+
+[node name="UI" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 640.0
+margin_bottom = 480.0
+
+[node name="P1" type="KinematicBody2D" parent="."]
+position = Vector2( 64, 240 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="P1"]
+polygon = PoolVector2Array( -8, -48, 8, -48, 8, 48, -8, 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P1"]
+shape = SubResource( 1 )
+
+[node name="PlayerController" type="Node" parent="P1"]
+script = ExtResource( 7 )
+
+[node name="P2" type="KinematicBody2D" parent="."]
+position = Vector2( 576, 240 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="P2"]
+polygon = PoolVector2Array( -8, -48, 8, -48, 8, 48, -8, 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P2"]
+shape = SubResource( 2 )
+
+[node name="AIController" type="Node" parent="P2"]
+script = ExtResource( 6 )
+
+[node name="Separator" type="Node2D" parent="."]
+modulate = Color( 0.466667, 0.466667, 0.466667, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D2" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 96 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 160 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 96 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 192 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 96 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 224 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 96 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 256 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D6" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 96 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 288 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D7" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 96 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 320 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D13" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 288 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 160 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D12" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 288 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 192 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D11" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 288 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 224 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D10" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 288 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 256 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D9" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 288 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 288 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D8" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 288 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 320 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D18" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 448 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 192 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D17" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 448 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 224 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Polygon2D16" type="Polygon2D" parent="Separator"]
+position = Vector2( 328, 448 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+offset = Vector2( 52, 256 )
+polygon = PoolVector2Array( -64, -248, -56, -248, -56, -232, -64, -232 )
+
+[node name="Boundary" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundary"]
+position = Vector2( 320, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="Boundary/StaticBody2D"]
+polygon = PoolVector2Array( -328, -8, 328, -8, 328, 8, -328, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundary"]
+position = Vector2( 320, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="Boundary/StaticBody2D2"]
+polygon = PoolVector2Array( -328, -8, 328, -8, 328, 8, -328, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D2"]
+shape = SubResource( 3 )
+
+[node name="P1Back" type="Area2D" parent="Boundary"]
+position = Vector2( -56, 240 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/P1Back"]
+shape = SubResource( 4 )
+
+[node name="P2Back" type="Area2D" parent="Boundary"]
+position = Vector2( 696, 240 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/P2Back"]
+shape = SubResource( 4 )
+
+[node name="Ball" type="KinematicBody2D" parent="."]
+position = Vector2( 320, 256 )
+script = ExtResource( 8 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball"]
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource( 5 )
+
+[node name="RespawnPoint" type="Position2D" parent="."]
+position = Vector2( 320, 256 )
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Pause" parent="PauseMenu" instance=ExtResource( 2 )]
+visible = false
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="MainMenu" parent="MainMenu" instance=ExtResource( 9 )]
+
+[node name="ScreenShader" type="CanvasLayer" parent="."]
+layer = 128
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="ScreenShader"]
+visible = false
+material = ExtResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="p1_score_update" from="." to="UI" method="_on_MainGame_p1_score_update"]
+[connection signal="p2_score_update" from="." to="UI" method="_on_MainGame_p2_score_update"]
+[connection signal="body_entered" from="Boundary/P1Back" to="." method="_on_P1Back_body_entered"]
+[connection signal="body_entered" from="Boundary/P2Back" to="." method="_on_P2Back_body_entered"]
+[connection signal="reset_game" from="PauseMenu/Pause" to="." method="_on_reset_game"]

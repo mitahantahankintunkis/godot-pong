@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://interface/themes/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://interface/GameOver.gd" type="Script" id=2]
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.741176 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -110.0
+margin_top = -66.0
+margin_right = 110.0
+margin_bottom = 66.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 220.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 64 )
+text = "Game Over"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 68.0
+margin_right = 220.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 0, 64 )
+text = "Reset"
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
